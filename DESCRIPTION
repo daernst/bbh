@@ -1,0 +1,19 @@
+Package: bbh
+Title: Serving Boothbay Harbor SST
+Description: Serving Boothbay Harbor SST.
+Version: 0.1
+Depends:
+    R (>= 4.1)
+Imports:
+    rlang,
+    dplyr,
+    readr,
+    ggplot2,
+    jsonlite,
+    httr
+Encoding: UTF-8
+Maintainer: Dave Ernst <dernst@bigelow.org>
+Author: Dave Ernst <dernst@bigelow.org>
+License: MIT + file LICENSE
+LazyData: true
+RoxygenNote: 7.1.2
