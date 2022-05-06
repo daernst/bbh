@@ -16,7 +16,7 @@
 #' 
 #' @export
 #' @param x sst class tibble
-#' @param ... future other arguments passed to ggplot2
+#' @param ... potential future other arguments passed to ggplot2
 #' 
 #' @return ggplot2 object
 
