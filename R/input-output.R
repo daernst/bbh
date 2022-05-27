@@ -142,3 +142,21 @@ fetch_sst <- function(name = "bbh", form = "daily"){
   return(x)
 }
 
+
+#' Sets path name
+#' 
+#' @export
+#' @param ... any filepath segments, optional
+#' @param root root filepath, defaults to user directory
+#' @return
+#' 
+
+get_path <- function(..., root = "C:\\Users\\ernst\\AppData\\Local/bbh/bbh"){
+  ## make root if it doesn't exist
+  if(!dir.exists(root)[1]){
+    dir.create(root[1], recursive = TRUE)
+  }
+  file.path(root, ...)
+}
+
+

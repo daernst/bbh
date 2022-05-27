@@ -21,14 +21,14 @@
 #' @return ggplot2 object
 
 plot.sst_group <- function(x, ...){
-  ggplot2::ggplot(x, ggplot2::aes(x = COLLECTION_DATE,
-                                  y = SEA_SURFACE_TEMP_AVG_C,
-                                  group = name,
-                                  col = name)) +
+  ggplot2::ggplot(x, ggplot2::aes(x = .data$COLLECTION_DATE,
+                                  y = .data$SEA_SURFACE_TEMP_AVG_C,
+                                  group = .data$name,
+                                  col = .data$name)) +
     ggplot2::geom_line() +
-    ggplot2::geom_ribbon(ggplot2::aes(ymin = SEA_SURFACE_TEMP_MIN_C,
-                                      ymax = SEA_SURFACE_TEMP_MAX_C,
-                                      fill = name),
+    ggplot2::geom_ribbon(ggplot2::aes(ymin = .data$SEA_SURFACE_TEMP_MIN_C,
+                                      ymax = .data$SEA_SURFACE_TEMP_MAX_C,
+                                      fill = .data$name),
                          linetype = 0,
                          alpha = 0.4)
 }
@@ -44,13 +44,13 @@ plot.sst_group <- function(x, ...){
 
 plot.sst <- function(x, xlim = range(x$COLLECTION_DATE, na.rm = TRUE), ...){
   if(!inherits(xlim, "Date")){xlim <- as.Date(xlim)}
-  ggplot2::ggplot(x |> dplyr::filter(dplyr::between(COLLECTION_DATE, xlim[1], xlim[2])),
-                  ggplot2::aes(x = COLLECTION_DATE,
-                               y = SEA_SURFACE_TEMP_AVG_C)) +
+  ggplot2::ggplot(x |> dplyr::filter(dplyr::between(.data$COLLECTION_DATE, xlim[1], xlim[2])),
+                  ggplot2::aes(x = .data$COLLECTION_DATE,
+                               y = .data$SEA_SURFACE_TEMP_AVG_C)) +
     ggplot2::xlim(xlim) +
     ggplot2::geom_line() +
-    ggplot2::geom_ribbon(ggplot2::aes(ymin = SEA_SURFACE_TEMP_MIN_C,
-                                      ymax = SEA_SURFACE_TEMP_MAX_C),
+    ggplot2::geom_ribbon(ggplot2::aes(ymin = .data$SEA_SURFACE_TEMP_MIN_C,
+                                      ymax = .data$SEA_SURFACE_TEMP_MAX_C),
                          linetype = 0,
                          alpha = 0.4) +
     ggplot2::labs(title = attr(x, "longname"),

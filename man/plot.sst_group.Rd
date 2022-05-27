@@ -9,7 +9,7 @@
 \arguments{
 \item{x}{sst class tibble}
 
-\item{...}{future other arguments passed to ggplot2}
+\item{...}{potential future other arguments passed to ggplot2}
 }
 \value{
 ggplot2 object

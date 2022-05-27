@@ -10,7 +10,8 @@ Imports:
     readr,
     ggplot2,
     jsonlite,
-    httr
+    httr,
+    rappdirs
 Encoding: UTF-8
 Maintainer: Dave Ernst <dernst@bigelow.org>
 Author: Dave Ernst <dernst@bigelow.org>
